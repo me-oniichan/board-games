@@ -9,7 +9,8 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;  
+  height: 100vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .wrapper{
@@ -22,7 +23,7 @@ body{
   border: 3px solid #a26900;
   border-radius: 10px;
   overflow: hidden;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
   font-size: 2em;
 }
 
@@ -46,7 +47,7 @@ body{
 }
 
 .dup{
-  color: red;
+  background-color: red;
 }
 
 .cell{

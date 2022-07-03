@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
 import sudokuContext from "./sudokuContext";
+import { isvalid } from "./utils";
 
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
@@ -10,9 +11,15 @@ export default function Board() {
       grid.map((val1, ind1) =>
         val1.map((val2, ind2) => {
           if (ind1 === i && ind2 === j) {
-            if (!isNaN(e)) val2 = { ...val2, value: e, mode: "black" };
-            else if (e === "Backspace")
-              val2 = { ...val2, value: 0, mode: "#3838f9ed" };
+            if (!isNaN(e) && e !== "0") {
+              val2 = { ...val2, value: e, mode: "black" , class: isvalid(grid, i, j, e)? "col":"dup"};
+            } else if (e === "Backspace")
+              val2 = {
+                ...val2,
+                value: 0,
+                mode: "#3838f9ed",
+                class: "col"
+              };
           }
           return val2;
         })
@@ -39,9 +46,8 @@ export default function Board() {
                 onChange={(e) => {
                   e.target.value = val2.value ? val2.value : "";
                 }}
-
                 style={{
-                  color: val2.mode
+                  color: val2.mode,
                 }}
               />
             </Col>
