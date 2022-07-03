@@ -28,20 +28,22 @@ export default function Board() {
             <Col
               className={val2.class}
               key={ind1.toString() + ind2.toString()}
-              tabIndex="0"
               onKeyDown={(e) => {
                 setval(e.key, ind1, ind2);
               }}
             >
-              <input className="dummy" type="number" value={''}/>
-              <span
-                style={{
-                  margin: "auto",
-                  color: val2.mode,
+              <input
+                className="cell text-center"
+                type="text"
+                inputMode="numeric"
+                onChange={(e) => {
+                  e.target.value = val2.value ? val2.value : "";
                 }}
-              >
-                {val2.value ? val2.value : ""}
-              </span>
+
+                style={{
+                  color: val2.mode
+                }}
+              />
             </Col>
           ))}
         </Row>

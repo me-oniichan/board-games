@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Board from "./Board";
 import sudokuContext from "./sudokuContext";
+import Buttons from "./Buttons";
 
 export default function Sudoku() {
-    const grid = {};
-
     const board = useState(new Array(9).fill(0).map(() => new Array(9).fill({
         value: 0,
         class: "col",
@@ -15,6 +14,7 @@ export default function Sudoku() {
         <sudokuContext.Provider value={board}>
             <div className="wrapper" >
                 <Board></Board>
+                <Buttons></Buttons>
             </div>
         </sudokuContext.Provider>
     );

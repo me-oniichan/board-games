@@ -35,25 +35,33 @@ body{
   outline: none;
 }
 
-.col:hover{
+.cell:hover{
   background: #30ff305d;
 }
 
-.col:focus{
+.cell:focus{
   background: #16ee16bb;
   border: 1px solid #009400;
+  box-shadow: 0 0 8px 1px #25ff46ed;
 }
 
 .dup{
   color: red;
 }
 
-.dummy{
-  opacity: 0;
+.cell{
   position: absolute;
-  aspect-ratio: 1;
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  outline: none;
+  border: none;
+  caret-color: transparent;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
 }
 
 @media only screen and (max-width: 600px) {
@@ -64,5 +72,12 @@ body{
   #root{
     display: block;
     margin-top: calc(25vh);
+  }
+  .cell{
+    height: 35px;
+    width: 35px;
+  }
+  .cell:focus{
+    box-shadow: none;
   }
 }
