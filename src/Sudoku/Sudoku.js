@@ -5,16 +5,11 @@ import sudokuContext from "./sudokuContext";
 export default function Sudoku() {
   const grid = {};
 
-  for (let i = 1; i < 10; i++) {
-    grid[i] = {};
-    for (let j = 1; j < 10; j++) {
-      grid[i][j] = {};
-      grid[i][j].val = 0;
-      grid[i][j].class = "cell";
-      grid[i][j].color = "varibale";
-    }
-  }
-  const board = useState(grid);
+  const board = useState(new Array(9).fill(0).map(() => new Array(9).fill({
+    value : 0,
+    class : "col",
+    mode : "#3838f9ed"
+  })));
 
   return(
       <sudokuContext.Provider value = {board}>

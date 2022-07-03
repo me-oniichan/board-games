@@ -1,14 +1,31 @@
-.board{
+#board{
   max-width: 500px;
   aspect-ratio: 1;
   border: 3px solid #a26900;
   border-radius: 10px;
   overflow: hidden;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 2em;
 }
 
 .col{
   border: 1px solid #907142b7;
   aspect-ratio: 1;
+  display: flex;
+  outline: none;
+}
+
+.col:hover{
+  background: #30ff305d;
+}
+
+.col:focus{
+  background: #16ee16bb;
+  border: 1px solid #009400;
+}
+
+.dup{
+  color: red;
 }
 
 @media only screen and (max-width: 600px) {

@@ -1,15 +1,10 @@
 import { createContext } from "react";
 
-const grid = {};
-for (let i = 1; i < 10; i++) {
-  grid[i] = {};
-  for (let j = 1; j < 10; j++) {
-    grid[i][j] = {};
-    grid[i][j].val = 0;
-    grid[i][j].class = "cell";
-    grid[i][j].color = "varibale";
-  }
-}
-
-const sudokuContext = createContext([grid, () => {}]);
+const sudokuContext = createContext([
+  new Array(9).fill(0).map(() => new Array(9).fill({
+    value : 0,
+    class : "col",
+    mode : "fixed"
+  }))
+  , () => {}]);
 export default sudokuContext;
