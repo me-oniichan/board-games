@@ -1,5 +1,23 @@
+body{
+  height: 100vh;
+  background: url(/src/Assets/background-blue.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#root{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;  
+}
+
+.wrapper{
+  margin: auto;
+}
+
 #board{
-  max-width: 500px;
+  width: 500px;
   aspect-ratio: 1;
   border: 3px solid #a26900;
   border-radius: 10px;
@@ -12,6 +30,8 @@
   border: 1px solid #907142b7;
   aspect-ratio: 1;
   display: flex;
+  align-items: center;
+  justify-content: center;
   outline: none;
 }
 
@@ -28,8 +48,21 @@
   color: red;
 }
 
+.dummy{
+  opacity: 0;
+  position: absolute;
+  aspect-ratio: 1;
+  width: 30px;
+  height: 30px;
+}
+
 @media only screen and (max-width: 600px) {
-  .board {
-    width: calc(100% - 15px);
+  #board {
+    width: calc(100% - 10px);
+    font-size: 1.2em;
+  }
+  #root{
+    display: block;
+    margin-top: calc(25vh);
   }
 }
