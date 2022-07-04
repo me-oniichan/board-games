@@ -73,3 +73,27 @@ export function isvalid(grid, row, col, val) {
 
   return true;
 }
+
+
+export function solveGrid(grid, row, col) {
+  const solve = function (grid, row, col) {
+    if (row > 8 && col >= 8) return grid;
+    else if (row > 8) {
+      row = 0;
+      col++;
+    }
+    if (grid[row][col].value !== 0) {
+      return solve(grid, row + 1, col);
+    }
+
+    for (let i = 1; i <= 9; i++) {
+      if (isvalid(grid, row, col, i)) {
+        grid[row][col].value = i;
+        if (solve(grid, row + 1, col)) return grid;
+        else grid[row][col].value = 0;
+      }
+    }
+    return false;
+  };
+  return solve(grid, row, col);
+}

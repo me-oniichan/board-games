@@ -12,7 +12,7 @@ export default function Board() {
         val1.map((val2, ind2) => {
           if (ind1 === i && ind2 === j) {
             if (!isNaN(e) && e !== "0") {
-              val2 = { ...val2, value: e, mode: "black" , class: isvalid(grid, i, j, e)? "col":"dup"};
+              val2 = { ...val2, value: parseInt(e), mode: "black" , class: isvalid(grid, i, j, e)? "col":"dup"};
             } else if (e === "Backspace")
               val2 = {
                 ...val2,
@@ -26,7 +26,6 @@ export default function Board() {
       )
     );
   }
-
   return (
     <Container className="text-bg-warning text-center" id="board">
       {grid.map((val1, ind1) => (
@@ -43,6 +42,7 @@ export default function Board() {
                 className="cell text-center"
                 type="text"
                 inputMode="numeric"
+                value={val2.value ? val2.value : ""}
                 onChange={(e) => {
                   e.target.value = val2.value ? val2.value : "";
                 }}
