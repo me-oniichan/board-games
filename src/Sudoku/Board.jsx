@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
+import dupContext from "./dupContext";
 import sudokuContext from "./sudokuContext";
 import { isvalid } from "./utils";
 
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
+  const [duplicate, setDupicate] = useContext(dupContext);
 
   function setval(e, i, j) {
     setGrid(
@@ -12,6 +14,10 @@ export default function Board() {
         val1.map((val2, ind2) => {
           if (ind1 === i && ind2 === j) {
             if (!isNaN(e) && e !== "0") {
+              if (isvalid(grid, i, j, parseInt(e))){
+                duplicate.push([ind1, ind2]);
+                setDupicate(duplicate);
+              }
               val2 = { ...val2, value: parseInt(e), mode: "black" , class: isvalid(grid, i, j, parseInt(e))? "valid":"dup"};
             } else if (e === "Backspace")
               val2 = {
