@@ -36,28 +36,39 @@ body{
   outline: none;
 }
 
-.cell:hover{
-  background: #30ff305d;
-}
-
-.cell:focus{
-  background: #16ee16bb;
-  border: 1px solid #009400;
-  box-shadow: 0 0 8px 1px #25ff46ed;
-}
-
-.dup{
-  background-color: red;
-}
-
 .cell{
   position: absolute;
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   background: transparent;
   outline: none;
   border: none;
   caret-color: transparent;
+  text-align: center;
+}
+
+.valid:hover{
+  background: #30ff305d;
+}
+
+.valid:focus{
+  background: #16ee16bb;
+  border: 2px solid #009400;
+  box-shadow: 0 0 8px 1px #25ff46ed;
+}
+
+.dup{
+  background: #ff3333cf;
+}
+
+.dup:hover{
+  background: #ff30305d;
+}
+
+.dup:focus{
+  background: #ff0000;
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 8px 1px #ff0000;
 }
 
 input[type=number] {

@@ -12,13 +12,13 @@ export default function Board() {
         val1.map((val2, ind2) => {
           if (ind1 === i && ind2 === j) {
             if (!isNaN(e) && e !== "0") {
-              val2 = { ...val2, value: parseInt(e), mode: "black" , class: isvalid(grid, i, j, e)? "col":"dup"};
+              val2 = { ...val2, value: parseInt(e), mode: "black" , class: isvalid(grid, i, j, parseInt(e))? "valid":"dup"};
             } else if (e === "Backspace")
               val2 = {
                 ...val2,
                 value: 0,
-                mode: "#3838f9ed",
-                class: "col"
+                mode: "#5b50b1",
+                class: "valid"
               };
           }
           return val2;
@@ -32,14 +32,13 @@ export default function Board() {
         <Row key={ind1}>
           {val1.map((val2, ind2) => (
             <Col
-              className={val2.class}
               key={ind1.toString() + ind2.toString()}
               onKeyDown={(e) => {
                 setval(e.key, ind1, ind2);
               }}
             >
               <input
-                className="cell text-center"
+                className={`${val2.class} cell`}
                 type="text"
                 inputMode="numeric"
                 value={val2.value ? val2.value : ""}

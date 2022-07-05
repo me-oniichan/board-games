@@ -6,8 +6,8 @@ import Buttons from "./Buttons";
 export default function Sudoku() {
     const board = useState(new Array(9).fill(0).map(() => new Array(9).fill(0).map(()=>({
         value: 0,
-        class: "col",
-        mode: "#3838f9ed"
+        class: "valid",
+        mode: "#5b50b1"
     }))));
 
     return (
