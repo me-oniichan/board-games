@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
 import dupContext from "./dupContext";
 import sudokuContext from "./sudokuContext";
-import { isvalid } from "./utils";
+import { isvalid, verify } from "./utils";
 
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
@@ -19,11 +19,10 @@ export default function Board() {
                 setDuplicate(duplicate);
               }
               else {
-                let temp = grid;
-                temp[ind1][ind2].value = 0;
+                grid[ind1][ind2] = parseInt(e);
                 setDuplicate(
                   duplicate.filter((row) =>
-                    !isvalid(temp, row[0], row[1], temp[row[0]][row[1]].value)
+                    verify(grid, row[0], row[1], grid[row[0]][row[1]].value)
                   )
                 );
               }
@@ -33,7 +32,7 @@ export default function Board() {
                 mode: "black",
               };
             } else if (e === "Backspace") {
-
+              setDuplicate(duplicate.filter(row=>(JSON.stringify(row) !== JSON.stringify([ind1, ind2]))))
               val2 = {
                 ...val2,
                 value: 0,

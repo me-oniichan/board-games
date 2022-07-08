@@ -98,11 +98,69 @@ export function solveGrid(grid, row, col) {
   return solve(grid, row, col);
 }
 
-
-export function verify(grid, row, col, val){
-//return duplicate values
-  let set = new Set();
-  for (let i = 0; i < 9; i++){
-    if ()
+export function verify(grid, row, col, val) {
+  //return true if found more than one
+  if (val === 0) return 1;
+  let count = 0;
+  for (let i = 0; i < 9; i++) {
+    if (grid[row][i].value === val) count++;
   }
+  if (count > 1) return 1;
+  count = 0;
+  for (let i = 0; i < 9; i++) {
+    if (grid[i][col].value === val) count++;
+  }
+
+  if (count > 1) return 1;
+  count = 0;
+
+  for (let i = 0; i < 3; i++) {
+    if (row < 3 && col < 3) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i][j].value === val) count++;
+      }
+    }
+    else if (row < 3 && col < 6) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i][j + 3].value === val) count++;
+      }
+    }
+    else if (row < 3 && col < 9) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i][j + 6].value === val) count++;
+      }
+    }
+    else if (row < 6 && col < 3) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 3][j].value === val) count++;
+      }
+    }
+    else if (row < 6 && col < 6) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 3][j + 3].value === val) count++;
+      }
+    }
+    else if (row < 6 && col < 9) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 3][j + 6].value === val) count++;
+      }
+    }
+    else if (row < 9 && col < 3) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 6][j].value === val) count++;
+      }
+    }
+    else if (row < 9 && col < 6) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 6][j + 3].value === val) count++;
+      }
+    }
+    else if (row < 9 && col < 9) {
+      for (let j = 0; j < 3; j++) {
+        if (grid[i + 6][j + 6].value === val) count++;
+      }
+    }
+  }
+  return (count > 1) ? 1 : 0;
 }
+
