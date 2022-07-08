@@ -9,7 +9,6 @@ export default function Sudoku() {
         new Array(9).fill(0).map(() =>
             new Array(9).fill(0).map(() => ({
                 value: 0,
-                class: "valid",
                 mode: "#5b50b1",
             }))
         )

@@ -54,7 +54,7 @@ body{
 .valid:focus{
   background: #16ee16bb;
   border: 2px solid #009400;
-  box-shadow: 0 0 8px 1px #25ff46ed;
+  box-shadow: 0 0 5px 1px #25ff46ed;
 }
 
 .dup{
@@ -66,14 +66,9 @@ body{
 }
 
 .dup:focus{
-  background: #ff0000;
-  border: 2px solid #ff0000;
-  box-shadow: 0 0 8px 1px #ff0000;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-  -webkit-appearance: none;
+  background: #ff3333cf;
+  border: 2px solid #ff3333cf;
+  box-shadow: 0 0 8px 1px #be0000cf;
 }
 
 @media only screen and (max-width: 600px) {

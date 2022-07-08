@@ -97,3 +97,12 @@ export function solveGrid(grid, row, col) {
   };
   return solve(grid, row, col);
 }
+
+
+export function verify(grid, row, col, val){
+//return duplicate values
+  let set = new Set();
+  for (let i = 0; i < 9; i++){
+    if ()
+  }
+}

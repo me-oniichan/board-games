@@ -6,7 +6,7 @@ import { isvalid } from "./utils";
 
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
-  const [duplicate, setDupicate] = useContext(dupContext);
+  const [duplicate, setDuplicate] = useContext(dupContext);
 
   function setval(e, i, j) {
     setGrid(
@@ -14,18 +14,32 @@ export default function Board() {
         val1.map((val2, ind2) => {
           if (ind1 === i && ind2 === j) {
             if (!isNaN(e) && e !== "0") {
-              if (isvalid(grid, i, j, parseInt(e))){
+              if (!isvalid(grid, i, j, parseInt(e))) {
                 duplicate.push([ind1, ind2]);
-                setDupicate(duplicate);
+                setDuplicate(duplicate);
               }
-              val2 = { ...val2, value: parseInt(e), mode: "black" , class: isvalid(grid, i, j, parseInt(e))? "valid":"dup"};
-            } else if (e === "Backspace")
+              else {
+                let temp = grid;
+                temp[ind1][ind2].value = 0;
+                setDuplicate(
+                  duplicate.filter((row) =>
+                    !isvalid(temp, row[0], row[1], temp[row[0]][row[1]].value)
+                  )
+                );
+              }
+              val2 = {
+                ...val2,
+                value: parseInt(e),
+                mode: "black",
+              };
+            } else if (e === "Backspace") {
+
               val2 = {
                 ...val2,
                 value: 0,
                 mode: "#5b50b1",
-                class: "valid"
               };
+            }
           }
           return val2;
         })
@@ -44,12 +58,18 @@ export default function Board() {
               }}
             >
               <input
-                className={`${val2.class} cell`}
+                className={`${duplicate.some(
+                  (row) =>
+                    JSON.stringify(row) ===
+                    JSON.stringify([ind1, ind2])
+                ) ? "dup" : "valid"} cell`}
                 type="text"
                 inputMode="numeric"
                 value={val2.value ? val2.value : ""}
                 onChange={(e) => {
-                  e.target.value = val2.value ? val2.value : "";
+                  e.target.value = val2.value
+                    ? val2.value
+                    : "";
                 }}
                 style={{
                   color: val2.mode,
