@@ -1,8 +1,8 @@
 import {useContext, useState} from "react";
 import { Button, Tooltip } from "reactstrap";
-import sudokuContext from "../sudokuContext";
+import sudokuContext from "../context/sudokuContext";
 import { solveGrid } from "../utils";
-import dupContext from "../dupContext";
+import dupContext from "../context/dupContext";
 
 export default function Solve() {
     const [grid, setGrid] = useContext(sudokuContext);

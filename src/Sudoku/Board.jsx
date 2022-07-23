@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
-import dupContext from "./dupContext";
-import sudokuContext from "./sudokuContext";
+import dupContext from "./context/dupContext";
+import sudokuContext from "./context/sudokuContext";
 import { isvalid, verify } from "./utils";
 
 export default function Board() {

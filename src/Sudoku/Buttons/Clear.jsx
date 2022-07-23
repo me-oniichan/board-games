@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
-import sudokuContext from "../sudokuContext";
+import sudokuContext from "../context/sudokuContext";
 
 export default function Clear() {
     const [grid, setGrid] = useContext(sudokuContext);

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Board from "./Board";
-import sudokuContext from "./sudokuContext";
-import dupContext from "./dupContext";
+import sudokuContext from "./context/sudokuContext";
+import dupContext from "./context/dupContext";
 import Buttons from "./Buttons";
 
 export default function Sudoku() {
