@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import { Button } from "reactstrap";
+import dupContext from "../context/dupContext";
 import sudokuContext from "../context/sudokuContext";
 
 export default function Clear() {
     const [grid, setGrid] = useContext(sudokuContext);
+    const setDuplicate = useContext(dupContext)[1];
 
     const clear = () => {
         setGrid(
@@ -14,6 +16,8 @@ export default function Clear() {
                 }))
             )
         );
+
+        setDuplicate([])
     };
 
     return (
