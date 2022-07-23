@@ -1,3 +1,4 @@
+import Clear from "./Clear";
 import Reset from "./Reset";
 import Solve from "./Solve";
 
@@ -7,6 +8,7 @@ export default function Buttons(){
         <div className="buttons">
             <Solve/>
             <Reset/>
+            <Clear/>
         </div>
     )
 }
