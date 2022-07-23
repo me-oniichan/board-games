@@ -4,7 +4,7 @@ import Solve from "./Solve";
 
 export default function Buttons(){
     return(
-        <div style={{margin: "5px", fontSize:"1rem"}}>
+        <div className="buttons">
             <Solve/>
             <Reset/>
         </div>
