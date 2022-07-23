@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Container, Row, Col } from "reactstrap";
+import animateContext from "./context/animateContext";
 import dupContext from "./context/dupContext";
 import sudokuContext from "./context/sudokuContext";
 import { isvalid, verify } from "./utils";
@@ -7,6 +8,7 @@ import { isvalid, verify } from "./utils";
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
   const [duplicate, setDuplicate] = useContext(dupContext);
+  const [animate] = useContext(animateContext)[0];
 
   function setval(e, i, j) {
     setGrid(
@@ -55,6 +57,7 @@ export default function Board() {
               onKeyDown={(e) => {
                 setval(e.key, ind1, ind2);
               }}
+              className = {animate[ind1][ind2]? "animate" : ""}
             >
               <input
                 className={`${duplicate.some(

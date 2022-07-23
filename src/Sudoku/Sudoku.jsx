@@ -2,6 +2,7 @@ import { useState } from "react";
 import Board from "./Board";
 import sudokuContext from "./context/sudokuContext";
 import dupContext from "./context/dupContext";
+import animateContext from "./context/animateContext";
 import Buttons from "./Buttons";
 
 export default function Sudoku() {
@@ -16,13 +17,19 @@ export default function Sudoku() {
 
     const duplicate = useState([]);
 
+    const animate = useState(
+        new Array(9).fill(0).map(() => new Array(9).fill(0).map(() => false))
+    );
+
     return (
         <sudokuContext.Provider value={board}>
             <dupContext.Provider value={duplicate}>
-                <div className="wrapper">
-                    <Board></Board>
-                    <Buttons></Buttons>
-                </div>
+                <animateContext.Provider value={animate}>
+                    <div className="wrapper">
+                        <Board></Board>
+                        <Buttons></Buttons>
+                    </div>
+                </animateContext.Provider>
             </dupContext.Provider>
         </sudokuContext.Provider>
     );

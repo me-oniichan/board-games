@@ -36,6 +36,10 @@ body {
     outline: none;
 }
 
+.animate{
+    background-color: #009400;
+}
+
 .cell {
     position: absolute;
     width: 50px;

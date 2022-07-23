@@ -1,3 +1,4 @@
+import Animate from "./Buttons/Animate";
 import Clear from "./Buttons/Clear";
 import Reset from "./Buttons/Reset";
 import Solve from "./Buttons/Solve";
@@ -9,6 +10,7 @@ export default function Buttons(){
             <Solve/>
             <Reset/>
             <Clear/>
+            <Animate/>
         </div>
     )
 }
