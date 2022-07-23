@@ -37,7 +37,7 @@ body {
 }
 
 .animate{
-    background-color: #009400;
+    background-color: #18fa187a;
 }
 
 .cell {
@@ -80,6 +80,7 @@ body {
     font-size: 1rem;
     display: flex;
     gap: 10px;
+    transition: 00.4s;
 }
 
 @media only screen and (max-width: 600px) {

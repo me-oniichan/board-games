@@ -8,7 +8,7 @@ import { isvalid, verify } from "./utils";
 export default function Board() {
   const [grid, setGrid] = useContext(sudokuContext);
   const [duplicate, setDuplicate] = useContext(dupContext);
-  const [animate] = useContext(animateContext)[0];
+  const animate = useContext(animateContext)[0];
 
   function setval(e, i, j) {
     setGrid(
@@ -53,11 +53,11 @@ export default function Board() {
         <Row key={ind1}>
           {val1.map((val2, ind2) => (
             <Col
+              className = {animate[ind1][ind2]? "animate" : ""}
               key={ind1.toString() + ind2.toString()}
               onKeyDown={(e) => {
                 setval(e.key, ind1, ind2);
               }}
-              className = {animate[ind1][ind2]? "animate" : ""}
             >
               <input
                 className={`${duplicate.some(
