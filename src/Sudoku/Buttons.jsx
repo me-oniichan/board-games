@@ -1,6 +1,6 @@
-import Clear from "./Clear";
-import Reset from "./Reset";
-import Solve from "./Solve";
+import Clear from "./Buttons/Clear";
+import Reset from "./Buttons/Reset";
+import Solve from "./Buttons/Solve";
 
 
 export default function Buttons(){
