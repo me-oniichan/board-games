@@ -4,13 +4,14 @@ import dupContext from "../context/dupContext";
 import sudokuContext from "../context/sudokuContext";
 import animateContext from "../context/animateContext";
 import { isvalid } from "../utils";
+import isanimatingContext from "../context/isanimatingContext";
 
 export default function Animate() {
     const [grid, setGrid] = useContext(sudokuContext);
     const [animate, setAnimate] = useContext(animateContext);
     const duplicate = useContext(dupContext)[0];
     const [ttip, setTtip] = useState(duplicate.length ? true : false);
-
+    const { isanimating, setIsanimating } = useContext(isanimatingContext);
     let v = animate;
 
     function sleep(ms) {
@@ -40,6 +41,7 @@ export default function Animate() {
     };
 
     const animation = async () => {
+        setIsanimating(true);
         const solve = async (grid, row, col) => {
             if (row > 8 && col >= 8) return grid;
             else if (row > 8) {
@@ -64,6 +66,7 @@ export default function Animate() {
         };
         await solve(grid, 0, 0);
         setAnimate(animate.map((v) => v.map(() => false)));
+        setIsanimating(false);
     };
 
     return (
@@ -72,11 +75,11 @@ export default function Animate() {
                 id="animate"
                 color={duplicate.length ? "danger" : "primary"}
                 onClick={
-                    duplicate.length
-                        ? () => {}
+                    duplicate.length || isanimating
+                        ? () => { }
                         : () => {
-                              animation();
-                          }
+                            animation();
+                        }
                 }
             >
                 Animate
