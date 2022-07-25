@@ -1,9 +1,3 @@
-.heading{
-  color: #c02b1a;
-  font-size: 50px;
-  font-weight: 600;
-}
-
 .backgrd{
   height: 100vh;
   width: 100vw;
@@ -13,31 +7,35 @@
 }
 
 .msg{
-  color: #2de000;
+  color: #1f41ff;
   padding: 5px;
   margin: auto;
-  width: 300px;
+  width: 340px;
   border-radius: 5px;
   margin-top: 25px;
   font-weight: 700;
-  font-size: 30px;
-  background-color: #853ed1;
+  font-size: 27px;
+  background-color: #ffbf00;
 }
 
 .grid{
   display: grid;
   grid-template-columns: repeat(3, 100px);
   gap: 10px;
-  margin-top: 25px;
-  justify-content: center;
+  margin: auto;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  width: max-content;
 }
 
 .box{
-  background-color: #d59d54;
+  background-color: #ffdc6b98;
   width: 100px;
   height: 100px;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 1px 0px 1px #6969697b;
 }

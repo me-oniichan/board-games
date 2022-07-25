@@ -68,12 +68,6 @@
     transition: 00.4s;
 }
 
-.heading{
-    color: #f82222;
-    text-align: center;
-    font-size: 3em;
-    text-decoration: 3px solid black;
-}
 
 @media only screen and (max-width: 600px) {
     #board {
