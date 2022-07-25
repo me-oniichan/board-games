@@ -4,6 +4,7 @@ import sudokuContext from "./context/sudokuContext";
 import dupContext from "./context/dupContext";
 import animateContext from "./context/animateContext";
 import Buttons from "./Buttons";
+import "./sudoku.css"
 
 export default function Sudoku() {
     const board = useState(
@@ -26,6 +27,7 @@ export default function Sudoku() {
             <dupContext.Provider value={duplicate}>
                 <animateContext.Provider value={animate}>
                     <div className="wrapper">
+                    <div className="heading">Sudoku</div>
                         <Board></Board>
                         <Buttons></Buttons>
                     </div>
