@@ -8,10 +8,10 @@ function Home() {
     return (
         <div style={{ display: "flex", gap: 10 }}>
             <Link to="/sudoku">
-                <Button color="info">Sudoku</Button>
+                <Button color="warning" size="lg" style={{width:"150px", height: "150px"}}>Sudoku</Button>
             </Link>
             <Link to="/ttt">
-                <Button color="info">Tic Tac Toe</Button>
+                <Button color="warning" size="lg" style={{width:"150px", height: "150px"}}>Tic Tac Toe</Button>
             </Link>
         </div>
     );

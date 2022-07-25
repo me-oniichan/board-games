@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { Button } from "reactstrap";
 import Icon from "./Icon";
 
-const data = new Array(9).fill(" ");
-
 const Grid = () => {
+  const [data, setData] = useState(new Array(9).fill(" "));
   const [turn, setTurn] = useState(Math.round(Math.random()));
   const [msg, setMsg] = useState(
     `Start Playing ${turn ? "Circle's" : "Cross'"} turn`
@@ -55,11 +55,16 @@ const Grid = () => {
       </div>
       <div className="text-bg-warning grid">
         {data.map((element, index) => (
-          <div className="box" onClick={() => playTurn(index)}>
+          <div className="box" key={index} onClick={() => playTurn(index)}>
             <Icon icon={element} />
           </div>
         ))}
       </div>
+      <Button className="mt-3" color="info" onClick={()=>{
+          setData(new Array(9).fill(" "));
+          setMsg(`Start Playing ${turn ? "Circle's" : "Cross'"} turn`);
+          setGame(1);
+      }} style={{width: "100px"}}>Reset</Button>
     </div>
   );
 };

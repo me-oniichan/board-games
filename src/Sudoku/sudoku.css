@@ -70,13 +70,15 @@
 
 
 @media only screen and (max-width: 600px) {
+    body{
+        height: 100vh;
+    }
     #board {
         width: calc(100% - 10px);
         font-size: 1.2em;
     }
     #root {
-        display: block;
-        margin-top: calc(25vh);
+        height: 100vh;
     }
     .cell {
         height: 35px;
