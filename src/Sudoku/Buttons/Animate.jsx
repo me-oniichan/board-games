@@ -43,20 +43,20 @@ export default function Animate() {
     const animation = async () => {
         setIsanimating(true);
         const solve = async (grid, row, col) => {
-            if (row > 8 && col >= 8) return grid;
-            else if (row > 8) {
-                row = 0;
-                col++;
+            if (col > 8 && row >= 8) return grid;
+            else if (col > 8) {
+                col = 0;
+                row++;
             }
             if (grid[row][col].value !== 0) {
-                return solve(grid, row + 1, col);
+                return solve(grid, row, col + 1);
             }
 
             for (let i = 1; i <= 9; i++) {
                 if (isvalid(grid, row, col, i)) {
                     grid[row][col].value = i;
                     await toggleState(row, col, i);
-                    if (await solve(grid, row + 1, col)) {
+                    if (await solve(grid, row, col+1)) {
                         return grid;
                     } else grid[row][col].value = 0;
                 }
@@ -76,10 +76,10 @@ export default function Animate() {
                 color={duplicate.length ? "danger" : "primary"}
                 onClick={
                     duplicate.length || isanimating
-                        ? () => { }
+                        ? () => {}
                         : () => {
-                            animation();
-                        }
+                              animation();
+                          }
                 }
             >
                 Animate
