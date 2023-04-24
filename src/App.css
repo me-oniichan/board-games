@@ -19,4 +19,18 @@ body {
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-  }
+}
+
+.front-cart{
+    width: 150px;
+    height: 150px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 23px;
+    box-sizing: border-box;
+    background-color : #262626;
+    border-color: cyan;
+    border-width: 3px;
+    border-style: solid;
+    color: white;
+    border-radius: 15px;
+}

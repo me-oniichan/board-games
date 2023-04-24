@@ -1,4 +1,4 @@
-import { Button } from "reactstrap";
+// import { Button } from "reactstrap";
 import "./App.css";
 import Sudoku from "./Sudoku/Sudoku";
 import Tictactoe from "./TicTacToe/TicTacToe";
@@ -8,10 +8,10 @@ function Home() {
     return (
         <div style={{ display: "flex", gap: 10 }}>
             <Link to="/sudoku">
-                <Button color="warning" size="lg" style={{width:"150px", height: "150px"}}>Sudoku</Button>
+                <button className="front-cart">Sudoku</button>
             </Link>
             <Link to="/ttt">
-                <Button color="warning" size="lg" style={{width:"150px", height: "150px"}}>Tic Tac Toe</Button>
+                <button className="front-cart">Tic Tac Toe</button>
             </Link>
         </div>
     );
