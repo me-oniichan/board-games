@@ -1,16 +1,34 @@
 body {
     height: 100vh;
-    background: url(/src/Assets/background-blue.webp);
+    background-color: #100116;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 #root {
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    margin: auto;
+}
+
+.HeroHead{
+    background: linear-gradient(to top, #090116, #3e167a);
+    width: 100vw;
+    height: 200px;
+    display: flex;
+}
+
+.HeroHead div{
+    display: inline-block;
+    margin: auto;
+}
+
+.HeroHead span{
+    color: yellow;
+    font: 100px "", sans-serif;
+    font-weight: bolder;
     margin: auto;
 }
 

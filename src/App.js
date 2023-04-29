@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Home() {
     return (
-        <div style={{ display: "flex", gap: 10 }}>
+        <div className="container">
             <Link to="/sudoku">
                 <button className="front-cart">Sudoku</button>
             </Link>
@@ -20,6 +20,11 @@ function Home() {
 function App() {
     return (
         <div className="App">
+            <div className="HeroHead">
+                <div>
+                    <span>G</span> <span>A</span> <span>M</span> <span>E</span> <span>S</span>
+                </div>
+            </div>
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />} />
