@@ -14,7 +14,7 @@ body {
 }
 
 .HeroHead{
-    background: linear-gradient(to top, #090116, #3e167a);
+    background: linear-gradient(to top, #090116, #2c0337);
     width: 100vw;
     height: 200px;
     display: flex;
@@ -25,11 +25,29 @@ body {
     margin: auto;
 }
 
+@keyframes textShine {
+    0% {
+        background-position: 0% 0%
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
 .HeroHead span{
-    color: yellow;
-    font: 100px "", sans-serif;
+    font: 100px "Josefin Sans", sans-serif;
     font-weight: bolder;
     margin: auto;
+
+    background: linear-gradient(45deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size:600% 150%;
+    animation: textShine 3s linear infinite;
 }
 
 .heading{
@@ -39,16 +57,29 @@ body {
     text-align: center;
 }
 
-.front-cart{
-    width: 150px;
-    height: 150px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 23px;
-    box-sizing: border-box;
-    background-color : #262626;
-    border-color: cyan;
-    border-width: 3px;
-    border-style: solid;
-    color: white;
+.container{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.front-cart-outer{
+    width: 204px;
+    height: 204px;
+    display: block;
+    background: linear-gradient(45deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);
+    text-decoration: none;
+    display: flex;
     border-radius: 15px;
+}
+
+.front-cart{
+    width: 200px;
+    height: 200px;
+    font: 20px "poppins" , sans-serif;
+    margin: auto;
+    border-radius: 15px;
+    background: #1a0c1e;
+    color: rgb(214, 91, 255);
 }
