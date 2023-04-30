@@ -57,21 +57,33 @@ body {
     text-align: center;
 }
 
-.container{
+.Card{
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
 }
+@keyframes rbg{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
 
 .front-cart-outer{
-    width: 204px;
-    height: 204px;
+    width: 205px;
+    height: 205px;
     display: block;
     background: linear-gradient(45deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);
     text-decoration: none;
     display: flex;
     border-radius: 15px;
+
 }
 
 .front-cart{
@@ -81,5 +93,5 @@ body {
     margin: auto;
     border-radius: 15px;
     background: #1a0c1e;
-    color: rgb(214, 91, 255);
+    color: #d65bff;
 }

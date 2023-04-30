@@ -4,19 +4,29 @@ import Sudoku from "./Sudoku/Sudoku";
 import Tictactoe from "./TicTacToe/TicTacToe";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
+function spin(e){
+    let deg=45;
+    let id = setInterval(()=>{
+        e.target.parentNode.setAttribute("style", `background : linear-gradient(${deg}deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);`);
+        deg = (deg+1)%360;
+    }, 5)
 
-function Home() {
+    return id;
+}
+
+function Home() { 
+    let id;
     return (
-        <div className="container">
+        <div className="Card">
             <Link className="front-cart-outer" to="/sudoku">
-                <button className="front-cart">Sudoku</button>
+                <button className="front-cart"  onMouseEnter={e=>{id=spin(e)}}  onMouseLeave={(e)=>clearInterval(id)}>Sudoku</button>
             </Link>
             <Link className="front-cart-outer" to="/ttt">
-                <button className="front-cart">Tic Tac Toe</button>
+            <button className="front-cart"  onMouseEnter={e=>{id=spin(e)}}  onMouseLeave={(e)=>clearInterval(id)}>Tic Tac Toe</button>
             </Link>
-        </div>
+        </div>   
     );
-}   
+}
 
 function App() {
     return (
