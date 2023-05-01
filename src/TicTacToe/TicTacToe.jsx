@@ -11,13 +11,13 @@ const Tictactoe = () => {
                     <span style={{ animationDelay: "1s" }}>I</span>
                     <span style={{ animationDelay: "2s" }}>C</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span style={{ animationDelay: "3s" }}>T</span>
-                    <span style={{ animationDelay: "4s" }}>A</span>
-                    <span style={{ animationDelay: "5s" }}>C</span>
+                    <span style={{ animationDelay: "4s" }}>T</span>
+                    <span style={{ animationDelay: "5s" }}>A</span>
+                    <span style={{ animationDelay: "6s" }}>C</span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
-                    <span style={{ animationDelay: "3s" }}>T</span>
-                    <span style={{ animationDelay: "4s" }}>O</span>
-                    <span style={{ animationDelay: "5s" }}>E</span>
+                    <span style={{ animationDelay: "7s" }}>T</span>
+                    <span style={{ animationDelay: "8s" }}>O</span>
+                    <span style={{ animationDelay: "9s" }}>E</span>
                 </div>
             </div>
             <Grid />

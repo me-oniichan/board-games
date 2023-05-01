@@ -46,8 +46,8 @@ background: linear-gradient(180deg, rgb(74, 6, 102) 0%, #0d0219 35%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-fill-color: transparent;
-    background-size:600% 150%;
-    animation: textShine 3s linear infinite;
+    background-size:400% 200%;
+    animation: textShine 2s linear infinite;
 }
 
 .heading{
