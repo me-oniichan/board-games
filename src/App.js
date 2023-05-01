@@ -18,6 +18,11 @@ function Home() {
     let id;
     return (
         <div className="Card">
+            <div className="HeroHead">
+                <div>
+                    <span>G</span> <span style={{animationDelay : '1s'}}>A</span> <span style={{animationDelay : '2s'}}>M</span> <span style={{animationDelay : '3s'}}>E</span> <span style={{animationDelay : '4s'}}>S</span>
+                </div>
+            </div>
             <Link className="front-cart-outer" to="/sudoku">
                 <button className="front-cart"  onMouseEnter={e=>{id=spin(e)}}  onMouseLeave={(e)=>clearInterval(id)}>Sudoku</button>
             </Link>
@@ -31,11 +36,7 @@ function Home() {
 function App() {
     return (
         <div className="App">
-            <div className="HeroHead">
-                <div>
-                    <span>G</span> <span style={{animationDelay : '1s'}}>A</span> <span style={{animationDelay : '2s'}}>M</span> <span style={{animationDelay : '3s'}}>E</span> <span style={{animationDelay : '4s'}}>S</span>
-                </div>
-            </div>
+            
             <Router>
                 <Routes>
                     <Route path="/" element={<Home />} />
