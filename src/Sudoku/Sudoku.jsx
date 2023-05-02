@@ -11,7 +11,7 @@ export default function Sudoku() {
         new Array(9).fill(0).map(() =>
             new Array(9).fill(0).map(() => ({
                 value: 0,
-                mode: "#5b50b1",
+                mode: "#6616fb",
             }))
         )
     );
@@ -35,8 +35,10 @@ export default function Sudoku() {
                                 <span style={{ animationDelay: "5s" }}>U</span>
                             </div>
                         </div>
-                        <Board></Board>
-                        <Buttons></Buttons>
+                        <div style={{display: "flex", flexDirection:"column", alignItems:"center"}}>
+                            <Board></Board>
+                            <Buttons></Buttons>
+                        </div>
                     </div>
                 </animateContext.Provider>
             </dupContext.Provider>

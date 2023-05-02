@@ -1,11 +1,9 @@
 body {
     height: 100vh;
     background: rgb(83,0,134);
-background: linear-gradient(180deg, rgb(74, 6, 102) 0%, #0d0219 35%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: linear-gradient(180deg, #37024d 0%, #0d0219 35%);
 }
+
 #root {
     align-items: center;
     justify-content: center;
@@ -76,8 +74,8 @@ background: linear-gradient(180deg, rgb(74, 6, 102) 0%, #0d0219 35%);
 }
 
 .HeroInsider{
-    margin-top: 30px;
-    height: 110px;
+    padding-top: 30px;
+    height: 150px;
 }
 
 .HeroInsider span{

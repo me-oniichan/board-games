@@ -5,15 +5,17 @@
 #board {
     width: 500px;
     aspect-ratio: 1;
-    border: 3px solid #a26900;
+    border: 3px solid #3600a2;
     border-radius: 10px;
     overflow: hidden;
-
     font-size: 2em;
 }
-
+.row{
+    background-color: #bf65ff;
+}
+ 
 .col {
-    border: 1px solid #907142b7;
+    border: 1px solid #584290b7;
     aspect-ratio: 1;
     display: flex;
     align-items: center;
@@ -22,7 +24,7 @@
 }
 
 .animate{
-    background-color: #18fa187a;
+    background-color: #30ff6bcd;
 }
 
 .cell {
@@ -37,13 +39,13 @@
 }
 
 .valid:hover {
-    background: #30ff305d;
+    background: #30ff6bc1;
 }
 
 .valid:focus {
-    background: #16ee16bb;
-    border: 2px solid #009400;
-    box-shadow: 0 0 5px 1px #25ff46ed;
+    background: #2df12ddd;
+    border: 2px solid #08ba08;
+    box-shadow: 0 0 5px 1px #2fff4fed;
 }
 
 .dup {
@@ -51,7 +53,7 @@
 }
 
 .dup:hover {
-    background: #ff30305d;
+    background: #f04141e9;
 }
 
 .dup:focus {
@@ -66,6 +68,7 @@
     display: flex;
     gap: 10px;
     transition: 00.4s;
+    width: 500px;
 }
 
 
@@ -76,6 +79,9 @@
     #board {
         width: calc(100% - 30px);
         font-size: 1.2em;
+    }
+    .buttons{
+        width: calc(100% - 30px);
     }
     #root {
         height: 100vh;
