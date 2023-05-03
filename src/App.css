@@ -1,12 +1,10 @@
 body {
     height: 100vh;
-    background: url(/src/Assets/background-blue.webp);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    background: rgb(83,0,134);
+    background: linear-gradient(180deg, #37024d 0%, #0d0219 35%);
 }
+
 #root {
-    display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -14,9 +12,93 @@ body {
     margin: auto;
 }
 
+.HeroHead{
+    width: 100vw;
+    height: 200px;
+    display: flex;
+}
+
+.HeroHead div{
+    display: inline-block;
+    margin: auto;
+}
+
+@keyframes textShine {
+    0% {
+        background-position: 0% 0%
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.HeroHead span{
+    font: 100px "Josefin Sans", sans-serif;
+    font-weight: bolder;
+    margin: auto;
+
+    background: linear-gradient(45deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size:400% 200%;
+    animation: textShine 2s linear infinite;
+}
+
 .heading{
     color: #00dc3e;
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-  }
+}
+
+.Card{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@keyframes rbg{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+.HeroInsider{
+    padding-top: 30px;
+    height: 150px;
+}
+
+.HeroInsider span{
+    font-size: 70px;
+}
+
+.front-cart-outer{
+    width: 205px;
+    height: 205px;
+    display: block;
+    background: linear-gradient(45deg, #3b9de3 0%, #7157e6 25%, #b040c2 51%, #ff353c 100%);
+    text-decoration: none;
+    display: flex;
+    border-radius: 15px;
+
+}
+
+.front-cart{
+    width: 200px;
+    height: 200px;
+    font: 20px "poppins" , sans-serif;
+    margin: auto;
+    border-radius: 15px;
+    background: #1a0c1e;
+    color: #d65bff;
+}

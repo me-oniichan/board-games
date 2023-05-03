@@ -34,7 +34,7 @@ export default function Board() {
                 mode: "black",
               };
             } else if (e === "Backspace") {
-              setDuplicate(duplicate.filter(row=>(JSON.stringify(row) !== JSON.stringify([ind1, ind2]))))
+              setDuplicate(duplicate.filter(row => (JSON.stringify(row) !== JSON.stringify([ind1, ind2]))))
               val2 = {
                 ...val2,
                 value: 0,
@@ -53,7 +53,7 @@ export default function Board() {
         <Row key={ind1}>
           {val1.map((val2, ind2) => (
             <Col
-              className = {animate[ind1][ind2]? "animate" : ""}
+              className={animate[ind1][ind2] ? "animate" : ""}
               key={ind1.toString() + ind2.toString()}
               onKeyDown={(e) => {
                 setval(e.key, ind1, ind2);
