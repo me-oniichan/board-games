@@ -53,7 +53,7 @@ const Grid = () => {
       <div className="msg" id="msg">
         {msg}
       </div>
-      <div className="text-bg-warning grid">
+      <div className="bg-card grid">
         {data.map((element, index) => (
           <div className="box" key={index} onClick={() => playTurn(index)}>
             <Icon icon={element} />
